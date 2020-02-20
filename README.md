@@ -18,19 +18,24 @@ To add this custom function to your spreadsheet, follow this procedure:
 
 ## Usage
 
-    =IMPORTJSON(URL, Query, Columns [, Param] [,Param])
+    =IMPORTJSON(URL, JSONPath Query, Columns [,Param] [,Param])
     
 An example:
 
     =IMPORTJSONAPI("http://data.nba.net/10s/prod/v1/2018/teams.json", "$.league.*[*]", "^.~, city, isNBAFranchise")
 
 
-| Parameter    |  Description                                                                      |
-|--------------|-----------------------------------------------------------------------------------|
-| **URL**      | The URL end-point of the API                                                      |
-| **Query**    | JSONPath query expression                                                         |
-| **Columns**  | Comma seperarted list of column path expressions                                  |
-| **Param**    | Optional list of parameters                                                       |
+| Parameter          |  Description                                                                      |
+|--------------------|-----------------------------------------------------------------------------------|
+| **URL**            | The URL end-point of the API                                                      |
+| **JSONPath Query** | JSONPath query expression                                                         |
+| **Columns**        | Comma seperarted list of column path expressions                                  |
+| **Param**          | Optional list of parameters                                                       |
 
-## JSONPath
+## URL
 
+## JSONPath Query
+
+## Columns
+
+## Params
