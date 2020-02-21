@@ -45,3 +45,7 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 ### Columns
 
 ### Params
+
+## Exmaples
+## GraphQL
+## Refreshing Data
