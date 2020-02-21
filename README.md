@@ -20,10 +20,11 @@ To add this custom function to your spreadsheet, follow this procedure:
 
     =IMPORTJSON(URL, JSONPath Query, Columns [,Param] [,Param])
     
-An example:
+**Example:**
 
     =IMPORTJSONAPI("http://data.nba.net/10s/prod/v1/2018/teams.json", "$.league.*[*]", "^.~, city, isNBAFranchise")
     
+**Example Data**
     
     {
       "stores" : {
