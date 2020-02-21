@@ -23,6 +23,12 @@ To add this custom function to your spreadsheet, follow this procedure:
 An example:
 
     =IMPORTJSONAPI("http://data.nba.net/10s/prod/v1/2018/teams.json", "$.league.*[*]", "^.~, city, isNBAFranchise")
+    
+    
+    {
+      "stores" : {
+      }
+    }
 
 
 | Parameter          |  Description                                                                      |
