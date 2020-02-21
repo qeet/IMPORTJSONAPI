@@ -46,8 +46,8 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 | Parameter     |  Description                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
-| **fieldname** | Specifies the key to a field                                                      |       
-| **[integer]** | Access an array.                                                                  |
+| **keyname**   | Specifies the key to a value. Must be quoted if it contains others other than letters, number or the underscore character |       
+| **[index]**   | Access an array with the specified index.                                         |
 | **^**         | The parent of the current object.                                                 |
 | **~**         | The key of the current object.                                                    |
 | **$**         | The root of the JSON object. Must always appear at first in the path.             |
