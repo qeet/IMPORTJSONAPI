@@ -27,7 +27,7 @@ An example:
 
 | Parameter          |  Description                                                                      |
 |--------------------|-----------------------------------------------------------------------------------|
-| **URL**            | The URL endpoint of the API                                                      |
+| **URL**            | The URL endpoint of the API                                                       |
 | **JSONPath Query** | JSONPath query expression                                                         |
 | **Columns**        | Comma seperarted list of column path expressions                                  |
 | **Param**          | Optional list of parameters                                                       |
@@ -43,6 +43,14 @@ The JSONPath expression to select the data that you wish to extract. Each JSON o
 The actual JSONPath query implementation used is [JSONPath Plus](https://github.com/s3u/JSONPath) which contains some additional functionality and [examples](https://github.com/s3u/JSONPath#syntax-through-examples).
 
 ### Columns
+
+| Parameter     |  Description                                                                      |
+|---------------|-----------------------------------------------------------------------------------|
+| **fieldname** | Specifies the key to a field                                                      |       
+| **[integer]** | Access an array.                                                                  |
+| **^**         | The parent of the current object.                                                 |
+| **~**         | The key of the current object.                                                    |
+| **$**         | The root of the JSON object. Must always appear at first in the path.             |
 
 ### Params
 
