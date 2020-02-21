@@ -28,6 +28,20 @@ To add this custom function to your spreadsheet, follow this procedure:
     
     {
       "stores" : {
+        "Borders" : [
+          {
+            "title" : "Yellow Rivers",
+            "Author" : "I.P. Daily",
+            "Price" : 3.99
+          }
+        ],
+        "Waterstones" : [
+          {
+            "title" : "Hot Dog",
+            "Author" : "Frank Furter",
+            Price : 8.50 
+          }
+        ]
       }
     }
 
