@@ -149,7 +149,8 @@ function compile_path_(path) {
       }
       ops.push(new op_propname_())
     } else if (type == "string" || type == "identifier") {
-      ops.push(new op_down_(type == "string" ? tok[1].slice(1, -1) : tok[1]))
+      var s = decodeURIComponent(tok[1])  // Replace escaped commas
+      ops.push(new op_down_(type == "string" ? s.slice(1, -1) : s))
     } else if (type == "obracket") {
       if (!is_next_(tokens, "int")) {
         throw new Error("array index must be an integer");
