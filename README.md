@@ -33,12 +33,14 @@ An example:
 | **Param**          | Optional list of parameters                                                       |
 
 ### URL
-The URL of the API endpoint. Any query parameters should be urlencoded. For example:
+The URL of the API endpoint. Any query parameters containing characters such as '&' or '=' should be urlencoded. For example:
 
     =IMPORTJSONAPI("https://api.test.com/store?api_token=ds45%3F6hjkd%3Ddjs, ...)
 
 ### JSONPath Query
-Given the following JSON, taken from <http://goessner.net/articles/JsonPath/>
+The JSONPath expression to select the data that you wish to extract. Each JSON object matched by the expression will become a row in your spreadsheet. An introduction to JSONPath expressions can be found at <http://goessner.net/articles/JsonPath/>.
+
+The actual JSONPath query implementation used is {JSONPath Plus](https://github.com/s3u/JSONPath) which contains some additional functionality and [exmaples](https://github.com/s3u/JSONPath#syntax-through-examples).
 
 ### Columns
 
