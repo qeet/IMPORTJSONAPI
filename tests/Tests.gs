@@ -36,10 +36,14 @@ var data1 = {
 }
 
 var data2 = {
-  'food & cooking' : [
-      {
-      }
-   ]
+  "store" : {
+    "fruit, bread & wine" : [
+        {
+          "name" : "Banana",
+          "price" : 1.49
+        }
+    ]
+  }
 }
 
 function compare_tables(expected, actual) {
@@ -75,6 +79,8 @@ function check(result) {
 function run_tests() {
   tests1();
   tests2();
+  tests3();
+  tests4();
 }
 
 function tests1() {
@@ -158,6 +164,12 @@ function tests3() {
   
   var expected = IMPORTJSONAPI(data1, "$.store.book[*]", "$.store.~.bicycle")
   var actual = [ [ 'ERROR: ~ operator can only be used at the end of the path' ] ]
+  check(compare_tables(expected, actual));
+}
+
+function tests4() {
+  var expected = IMPORTJSONAPI(data2, "$.store", "'fruit%2C bread & wine'.[0].name")
+  var actual =  [ [ 'Banana' ] ]
   check(compare_tables(expected, actual));
 }
 
