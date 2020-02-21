@@ -2,7 +2,7 @@
 
 Provides a custom function to selectively extract data from a JSON or GraphQL API in a tabular format suitable for import into a Google Sheets spreadsheet.
 
-## Version
+## Changelog
 - v1.0.0 - Initial release
 
 ## Installation
@@ -46,6 +46,6 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 ### Params
 
-## Exmaples
+## Examples
 ## GraphQL
 ## Refreshing Data
