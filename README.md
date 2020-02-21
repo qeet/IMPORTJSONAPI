@@ -40,7 +40,7 @@ The URL of the API endpoint. Any query parameters containing characters such as 
 ### JSONPath Query
 The JSONPath expression to select the data that you wish to extract. Each JSON object matched by the expression will become a row in your spreadsheet. An introduction to JSONPath expressions can be found at <http://goessner.net/articles/JsonPath/>.
 
-The actual JSONPath query implementation used is {JSONPath Plus](https://github.com/s3u/JSONPath) which contains some additional functionality and [exmaples](https://github.com/s3u/JSONPath#syntax-through-examples).
+The actual JSONPath query implementation used is [JSONPath Plus](https://github.com/s3u/JSONPath) which contains some additional functionality and [examples](https://github.com/s3u/JSONPath#syntax-through-examples).
 
 ### Columns
 
