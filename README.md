@@ -44,13 +44,13 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 ### Columns
 
-| Parameter     |  Description                                                                      |
+| Component     |  Description                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
-| **keyname**   | Specifies the key to a value. Must be quoted if it contains others other than letters, number or the underscore character |       
+| **keyname**   | Specifies the key to a value. Must be quoted if it contains characters other than letters, numbers or the underscore character. if the name contains a comma ',' then it must always be escaped by using %2C instead. |       
 | **[index]**   | Access an array with the specified index.                                         |
-| **^**         | The parent of the current object.                                                 |
-| **~**         | The key of the current object.                                                    |
-| **$**         | The root of the JSON object. Must always appear at first in the path.             |
+| **^**         | The parent of the current value.                                                  |
+| **~**         | The key name of the current value. This must always appear last in the path.      |
+| **$**         | The root of the JSON object. This must always appear first in the path.           |
 
 ### Params
 
