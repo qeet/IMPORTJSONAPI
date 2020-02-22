@@ -96,7 +96,7 @@ The following examples are based on this JSON data:
 |--------------------|-----------------------------------------------------------------------------------|
 | **URL**            | The URL endpoint of the API                                                       |
 | **JSONPath Query** | JSONPath query expression                                                         |
-| **Columns**        | Comma seperarted list of column path expressions                                  |
+| **Columns**        | Comma separarted list of column path expressions                                  |
 | **Parameter**      | Optional list of parameters                                                       |
 
 ### URL
@@ -111,7 +111,7 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 ### Columns
 
-The Columns parameter is a comma seperated list of path expressions. Path expressions contain one or more of the following components optionally seperated by a period.
+The Columns parameter is a comma separated list of path expressions. Path expressions contain one or more of the following components optionally separated by a period.
 
 | Component     |  Description                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
