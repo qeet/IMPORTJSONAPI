@@ -46,6 +46,30 @@ var data2 = {
   }
 }
 
+var data3 = {
+  "stores" : {
+    "Borders" : [
+      {
+        "Title" : "Yellow Rivers",
+        "Author" : "I.P. Daily",
+        "Price" : 3.99
+      },
+      {
+        "Title" : "Full Moon",
+        "Author" : "Seymour Buns",
+        "Price" : 6.49
+      }
+    ],
+    "Waterstones" : [
+      {
+        "Title" : "Hot Dog",
+        "Author" : "Frank Furter",
+        "Price" : 8.50 
+      }
+    ]
+  }
+}
+
 function compare_tables(expected, actual) {
   if (expected.length > actual.length) {
     return "Got less rows than expected"
@@ -165,11 +189,33 @@ function tests3() {
   var expected = IMPORTJSONAPI(data1, "$.store.book[*]", "$.store.~.bicycle")
   var actual = [ [ 'ERROR: ~ operator can only be used at the end of the path' ] ]
   check(compare_tables(expected, actual));
+  
+  var expected = IMPORTJSONAPI(data1, "$.store.book[*]", "$.store.~.bicycle", "payload = { xxxx yyyy }")
+  var actual = [ [ 'ERROR: Invalid JSON: { xxxx yyyy }' ] ]
+  check(compare_tables(expected, actual));
 }
 
 function tests4() {
   var expected = IMPORTJSONAPI(data2, "$.store", "'fruit%2C bread & wine'.[0].name")
   var actual =  [ [ 'Banana' ] ]
+  check(compare_tables(expected, actual));
+}
+
+function tests5() {
+  var expected = IMPORTJSONAPI(data3, "$.stores.*[*]", "^.~, Title")
+  var actual =  [ [ 'Borders', 'Yellow Rivers' ], [ 'Borders', 'Full Moon' ], [ 'Waterstones', 'Hot Dog' ] ]
+  check(compare_tables(expected, actual));
+  
+  var expected = IMPORTJSONAPI(data3, "$..Title", "@")
+  var actual =  [ [ 'Yellow Rivers' ], [ 'Full Moon' ], [ 'Hot Dog' ] ]
+  check(compare_tables(expected, actual));
+  
+  var expected = IMPORTJSONAPI(data3, "$.stores.*[*]", "Title, Author")
+  var actual = [ [ 'Yellow Rivers', 'I.P. Daily' ], [ 'Full Moon', 'Seymour Buns' ], [ 'Hot Dog', 'Frank Furter' ] ]
+  check(compare_tables(expected, actual));
+  
+  var expected = IMPORTJSONAPI(data3, "$..[?(@.Price>5)]", "Title")
+  var actual =  [ [ 'Full Moon' ], [ 'Hot Dog' ] ]
   check(compare_tables(expected, actual));
 }
 
@@ -191,6 +237,6 @@ function test_c() {
 }
 
 function test_d() {
-  var data = IMPORTJSONAPI("http://countries.trevorblades.com/", "$.data.countries[*]", "name, languages[0].native", "method=post", "contentType=application/json", "payload={ 'query': '{ countries { emoji name languages { name native } } }' }")
+  var data = IMPORTJSONAPI("http://countries.trevorblades.com/", "$.data.countries[*]", "name, languages[0].native", "method=post", "contentType=application/json", "payload={ 'query' : '{ countries { emoji name languages { name native } } }' }")
   Logger.log(data)
 }
