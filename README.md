@@ -194,6 +194,12 @@ A request with Basic Authorizaton:
      = IMPORTJSONAPI("https://api.graph.cool/simple/v1/swapi", "$..films[*]", "^^name, director", "method=post", "contentType=application/json", "payload={ 'query': '{ allPersons { name films { director } } }' }")
 
 ## Refreshing Data
-By default Google Sheets only refreshes the results of a custom function every hour or so. If you want to force a refresh then this can be done by changing the function arguments. the function arguments change. In order to force a refresh you can add dummy arguments to the end of the arguments list 
+By default Google Sheets only refreshes the results of a custom function every hour or so. If you want to force a refresh then this can be achieved by changing any of the function arguments. The easiest way of doing this is to add a 'dummy parameter' to the end of the function arguments. The dummy parameter should either be a number or a boolean and will be ignored by the import function.
+
+**Example**
+
+    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", 1)
+
+You can now force a refresh by incrementing the number 1.
 
 ## Debugging
