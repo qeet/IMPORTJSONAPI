@@ -79,6 +79,16 @@ The following examples are based on this JSON data:
 | Borders     | Full Moon     |
 | Waterstones | Hot Dog       |
 
+**The titles of all books with a price greater than 5**
+
+    = IMPORTJSONAPI("https://test.com/api", "$..[?(@.Price>5)]", "Title")
+
+| Title         |
+|---------------|
+| Yellow Rivers |
+| Full Moon     |
+| Hot Dog       |
+
 ## Function Arguments
 | Parameter          |  Description                                                                      |
 |--------------------|-----------------------------------------------------------------------------------|
