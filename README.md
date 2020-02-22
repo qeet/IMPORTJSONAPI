@@ -180,4 +180,6 @@ A request with basic authorizaton:
     =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", 'headers={ "Authorization" : "Basic QWxhZGRpbjpPcGVuU2VzYW1l" }')
 
 ## GraphQL
+
+     = IMPORTJSONAPI("https://api.graph.cool/simple/v1/swapi", "$..films[*]", "^^name, director", "method=post", "contentType=application/json", "payload={ 'query': '{ allPersons { name films { director } } }' }")
 ## Refreshing Data
