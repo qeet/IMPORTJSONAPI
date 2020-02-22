@@ -20,8 +20,8 @@ To add this custom function to your spreadsheet, follow this procedure:
 
     =IMPORTJSON(URL, JSONPath Query, Columns [,Param] [,Param])
     
-**Examples**
-The following exmaples are based on this JSON data:
+### Examples
+The following examples are based on this JSON data:
 
     {
       "stores" : {
@@ -47,7 +47,7 @@ The following exmaples are based on this JSON data:
       }
     }
 
-** Select all books in all store**
+**Select all books in all stores**
 
     =IMPORTJSONAPI("https://test.com/api", "$.stores.*", "~, title")
 
@@ -57,7 +57,7 @@ The following exmaples are based on this JSON data:
 | Borders     | Full Moon     |
 | Waterstones | Hot Dog       |
 
-
+### Parameter Descriptions
 | Parameter          |  Description                                                                      |
 |--------------------|-----------------------------------------------------------------------------------|
 | **URL**            | The URL endpoint of the API                                                       |
