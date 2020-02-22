@@ -203,3 +203,8 @@ By default Google Sheets only refreshes the results of a custom function every h
 You can now force a refresh by incrementing the number 1.
 
 ## Debugging
+When you are trying to create the JSONPath query to filter your data, it is sometimes difficult to tell if you are getting the correct results. To help with this you should set the columns parameter to a single '@'. This will then output the list of objects that is being return by the query. Once you are happy with the results you can then modify the columns to extract the relevant fields.
+
+**Example**
+
+    =IMPORTJSONAPI("https://test.com/api", "$..book[?(@parent.bicycle && @parent.bicycle.color === "red")].category", "@")
