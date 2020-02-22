@@ -20,12 +20,9 @@ To add this custom function to your spreadsheet, follow this procedure:
 
     =IMPORTJSON(URL, JSONPath Query, Columns [,Param] [,Param])
     
-**Example:**
+**Examples**
+The following exmaples are based on this JSON data:
 
-    =IMPORTJSONAPI("http://data.nba.net/10s/prod/v1/2018/teams.json", "$.league.*[*]", "^.~, city, isNBAFranchise")
-    
-**Example Data**
-    
     {
       "stores" : {
         "Borders" : [
@@ -50,12 +47,15 @@ To add this custom function to your spreadsheet, follow this procedure:
       }
     }
 
-**=IMPORTJSONAPI()
+** Select all books in all store**
 
-| Store Name | Title           |
-|------------|-----------------|
-|  Borders   |  Yellow Rivers  |
+    =IMPORTJSONAPI("https://test.com/api", "$.stores.*", "~, title")
 
+| Store Name  | Title         |
+|-------------|---------------|
+| Borders     | Yellow Rivers |
+| Borders     | Full Moon     |
+| Waterstones | Hot Dog       |
 
 
 | Parameter          |  Description                                                                      |
