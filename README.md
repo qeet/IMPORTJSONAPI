@@ -45,6 +45,10 @@ To add this custom function to your spreadsheet, follow this procedure:
       }
     }
 
+    |-----------|-----------------|
+    |  Borders  |  Yellow Rivers  |
+
+
 
 | Parameter          |  Description                                                                      |
 |--------------------|-----------------------------------------------------------------------------------|
