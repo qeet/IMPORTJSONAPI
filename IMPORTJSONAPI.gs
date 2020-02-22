@@ -232,13 +232,18 @@ function parse_param_(arg) {
   var name = arg.substr(0, n).trim()
   var value = arg.substr(n+1).trim()
   if (value.length == 0) return;
+  value = decodeURIComponent(value) // Replace escaped '='  
   var type = param_types[name]
 
   if (type == 'string') {
     return [name, value]
   } else if (type == 'object') {
     value = value.replace(/'/g, '"')
-    return [name, JSON.parse(value)]
+    try {
+      return [name, JSON.parse(value)]
+    } catch (e) {
+      throw new Error("Invalid JSON: " + value);
+    }
   } else {
     throw new Error("Invalid parameter name: " + name);
   }
