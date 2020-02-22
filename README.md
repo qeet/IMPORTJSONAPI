@@ -38,7 +38,7 @@ To add this custom function to your spreadsheet, follow this procedure:
             "title" : "Full Moon",
             "Author" : "Seymour Buns",
             "Price" : 6.49
-          },
+          }
         ],
         "Waterstones" : [
           {
@@ -52,8 +52,9 @@ To add this custom function to your spreadsheet, follow this procedure:
 
 **=IMPORTJSONAPI()
 
-|-----------|-----------------|
-|  Borders  |  Yellow Rivers  |
+| Store Name | Title           |
+|------------|-----------------|
+|  Borders   |  Yellow Rivers  |
 
 
 
