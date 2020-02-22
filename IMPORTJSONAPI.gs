@@ -91,7 +91,7 @@ function gs_literal_(data) {
   if (data === undefined) {
     data = ""
   } else if (data === null) {
-    data = "null"
+    data = ""
   } else if (Array.isArray(data)) {
     var s = ""
     for (var i=0; i<data.length; i++) {
