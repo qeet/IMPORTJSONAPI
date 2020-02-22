@@ -124,7 +124,7 @@ The Columns paramter is a comma seperated list of path expressions. Path express
 
 ### Column path expression examples
 
-All example are based on the following JSON Object:
+All examples are based on the following JSON Object:
 
 ```json
 {
@@ -135,12 +135,16 @@ All example are based on the following JSON Object:
   }
 }
 ```
+The `Value` column is the result of the JSONPath expression and the `Result` column is the result after the column path expressions have been applied to the value. 
 
-| JsonPath      | Value                                                      | Columns       | Result         |
-|---------------|------------------------------------------------------------|---------------|----------------|
-| $.book        | { "title": "It", "author": "S. King","orders" : [28, 72] } | title, author | "It", "S.King" |
-| $.book.title  | "It"                                                       | @             | "It"           |
-| $.book.orders | [28, 72]                                                   | @             | "28, 72"       | 
+| JSONPath      | Value                                                       | Columns       | Result         |
+|---------------|-------------------------------------------------------------|---------------|----------------|
+| $.book        | { "title": "It", "author": "S. King", "orders" : [28, 72] } | title, author | "It", "S.King" |
+| $.book.title  | "It"                                                        | @             | "It"           |
+| $.book.orders | [28, 72]                                                    | @, [1]        | "28, 72", "72" | 
+| $.book.orders | [28, 72]                                                    | ^.author      | "S.King"       |
+| $.book        | { "title": "It", "author": "S. King", "orders" : [28, 72] } | ~             | "book"         | 
+| $.book.orders | [28, 72]                                                    | ^~, [0]       | "book", "28"   |
 
 ### Params
 
