@@ -113,10 +113,6 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 The Columns parameter is a comma seperated list of path expressions. Path expressions contain one or more of the following components optionally seperated by a period.
 
-If the value returned from the path expression is an array of scalars then the result is a list of the array items delimited by a comma.
-
-If the value returned from the path expression is an object or an array which does not contain only scalars the result is the first 50 characters of the objects string representation.
-
 | Component     |  Description                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
 | **keyname**   | Specifies the key to a value. Must be quoted if it contains characters other than letters, numbers or the underscore character. if the name contains a comma ',' then it must always be escaped by using %2C instead. |       
@@ -125,6 +121,10 @@ If the value returned from the path expression is an object or an array which do
 | **^**         | The parent of the current value.                                                  |
 | **~**         | The key name of the current value. This must always appear last in the path.      |
 | **$**         | The root of the JSON object. This must always appear first in the path.           |
+
+If the value returned from the path expression is an array of scalars then the result is a list of the array items delimited by a comma.
+
+If the value returned from the path expression is an object or an array which does not contain only scalars the result is the first 50 characters of the objects string representation.
 
 ### Column path expression examples
 
