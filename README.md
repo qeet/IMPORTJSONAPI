@@ -21,7 +21,7 @@ To add this custom function to your spreadsheet, follow this procedure:
 
 ## Usage
 
-    =IMPORTJSONPI(URL, JSONPath Query, Columns [,Parameter] [,Parameter])
+    =IMPORTJSONAPI(URL, JSONPath Query, Columns [,Parameter] [,Parameter])
 
 ### Examples
 The following examples are based on this JSON data:
