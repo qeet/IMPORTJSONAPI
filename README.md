@@ -7,7 +7,7 @@ Provides a custom function to selectively extract data from a JSON or GraphQL AP
 
 ## Installation
 
-**THIS SCRIPT REQUIRES THE NEW V8 RUNTIME - SEE STEP 3**
+**NOTE: THIS SCRIPT REQUIRES THE NEW V8 RUNTIME - SEE STEP 3**
 
 To add this custom function to your spreadsheet, follow this procedure:
 
