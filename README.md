@@ -111,7 +111,11 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 ### Columns
 
-The Columns parameter is a comma seperated list of path expressions. Path expressions contain one or more of the following components optionally seperated by a period '.'. 
+The Columns parameter is a comma seperated list of path expressions. Path expressions contain one or more of the following components optionally seperated by a period.
+
+If the value returned from the path expression is an array of scalars then the result is a list of the array items delimited by a comma.
+
+If the value returned from the path expression is an object or an array which does not contain only scalars the result is the first 50 characters of the objects string representation.
 
 | Component     |  Description                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
@@ -145,6 +149,7 @@ The `Value` column is the result of the JSONPath expression and the `Result` col
 | $.book.orders | [28, 72]                                                    | ^.author      | "S.King"       |
 | $.book        | { "title": "It", "author": "S. King", "orders" : [28, 72] } | ~             | "book"         | 
 | $.book.orders | [28, 72]                                                    | ^~, [0]       | "book", "28"   |
+| $.book.title  | "It"                                                        | $.book.author | "S. King"      |
 
 ### Params
 
