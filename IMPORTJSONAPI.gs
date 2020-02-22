@@ -8,15 +8,15 @@
   
   Changelog:
   
-  1.0.0  Initial release
+  1.0.0  Initial release (23 February 2020)
  *====================================================================================================================================*/
 
  /**
  * Return data from a JSON API.
  *
- * @param {string} url The URL to a public JSON feed.
+ * @param {string} url The URL of the API endpoint.
  * @param {string} query The JSONPath query expression.
- * @param {string} cols  A comma-separated list of columns.
+ * @param {string} columns A comma separated list of column path expressions.
  * @param {string} [param] An optional parameter.
  * @return A two-dimensional array containing the data.
  * @customfunction
