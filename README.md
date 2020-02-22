@@ -47,6 +47,7 @@ The following examples are based on this JSON data:
     ]
   }
 }
+```
 
 **Get titles of all books**
 
