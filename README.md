@@ -152,7 +152,7 @@ The `Value` column is the result of the JSONPath expression and the `Result` col
 | $.book.title  | "It"                                                        | $.book.author | "S. King"      |
 
 ### Parameters
-After the three mandatory function arguments you can specift a variable number of function parameters. Each parameter is of the format:
+After the three mandatory function arguments you can specify a variable number of function parameters. Each parameter is of the format:
 
     "parametername = value"
 
