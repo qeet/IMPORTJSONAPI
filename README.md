@@ -21,7 +21,7 @@ To add this custom function to your spreadsheet, follow this procedure:
 
 ## Usage
 
-    =IMPORTJSON(URL, JSONPath Query, Columns [,Param] [,Param])
+    =IMPORTJSONPI(URL, JSONPath Query, Columns [,Parameter] [,Parameter])
 
 ### Examples
 The following examples are based on this JSON data:
@@ -151,8 +151,33 @@ The `Value` column is the result of the JSONPath expression and the `Result` col
 | $.book.orders | [28, 72]                                                    | ^~, [0]       | "book", "28"   |
 | $.book.title  | "It"                                                        | $.book.author | "S. King"      |
 
-### Params
+### Parameters
+After the three mandatory function arguments you can specift a variable number of function parameters. Each parameter is of the format:
 
-## Examples
+    "parametername = value"
+
+If the value contains a equals '=' character then it needs to be replaced with '%3D'. The value does not need to be quoted even if it is a string.
+
+| Parameter name | Type   | Description                                                                            |
+|----------------|--------|----------------------------------------------------------------------------------------|
+| method         | String | The HTTP method for the request: get, delete, patch, post, or put. The default is get. |
+| headers        | Object | A JSON key/value map of HTTP headers for the request.                                  |
+| contentType    | String | The content type for post requests. The default is 'application/x-www-form-urlencoded' |
+| payload        | Object | The payload for post requests.                                                         |
+
+### Parameter Examples
+
+A basic post request with no payload:
+
+    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", "method=post")
+    
+A post request with a payload:
+
+    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", "method=post", 'payload={ "user" : "andy", pass" : "pandy" }')
+
+A request with basic authorizaton:
+
+    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", 'headers={ "Authorization" : "Basic QWxhZGRpbjpPcGVuU2VzYW1l" }')
+
 ## GraphQL
 ## Refreshing Data
