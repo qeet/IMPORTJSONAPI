@@ -136,9 +136,11 @@ All example are based on the following JSON Object:
 }
 ```
 
-| JsonPath | Value                                                      | Columns       | Result     |
-|----------|------------------------------------------------------------|---------------|------------|
-| $.book   | { "title": "It", "author": "S. King","orders" : [28, 72] } | title, author | It, S.King |
+| JsonPath      | Value                                                      | Columns       | Result         |
+|---------------|------------------------------------------------------------|---------------|----------------|
+| $.book        | { "title": "It", "author": "S. King","orders" : [28, 72] } | title, author | "It", "S.King" |
+| $.book.title  | "It"                                                       | @             | "It"           |
+| $.book.orders | [28, 72]                                                   | @             | "28, 72"       | 
 
 ### Params
 
