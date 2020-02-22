@@ -85,7 +85,6 @@ The following examples are based on this JSON data:
 
 | Title         |
 |---------------|
-| Yellow Rivers |
 | Full Moon     |
 | Hot Dog       |
 
