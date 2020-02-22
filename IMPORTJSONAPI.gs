@@ -189,8 +189,12 @@ function op_up_() {
 
 function op_down_(name) {
   this.value = function (val, path, root) {
-    path.push(name)
-    return val[name]
+    if (Array.isArray(val) || (typeof val === "object" && val !== null)) {
+      path.push(name)
+      return val[name]
+    } else {
+      return undefined
+    }
   }
 }
 
