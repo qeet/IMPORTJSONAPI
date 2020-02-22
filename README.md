@@ -77,7 +77,7 @@ The following examples are based on this JSON data:
 | Borders     | Full Moon     |
 | Waterstones | Hot Dog       |
 
-## Function Parameters
+## Function Arguments
 | Parameter          |  Description                                                                      |
 |--------------------|-----------------------------------------------------------------------------------|
 | **URL**            | The URL endpoint of the API                                                       |
