@@ -33,7 +33,12 @@ To add this custom function to your spreadsheet, follow this procedure:
             "title" : "Yellow Rivers",
             "Author" : "I.P. Daily",
             "Price" : 3.99
-          }
+          },
+          {
+            "title" : "Full Moon",
+            "Author" : "Seymour Buns",
+            "Price" : 6.49
+          },
         ],
         "Waterstones" : [
           {
@@ -45,8 +50,10 @@ To add this custom function to your spreadsheet, follow this procedure:
       }
     }
 
-    |-----------|-----------------|
-    |  Borders  |  Yellow Rivers  |
+**=IMPORTJSONAPI()
+
+|-----------|-----------------|
+|  Borders  |  Yellow Rivers  |
 
 
 
