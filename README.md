@@ -27,21 +27,21 @@ The following examples are based on this JSON data:
       "stores" : {
         "Borders" : [
           {
-            "title" : "Yellow Rivers",
+            "Title" : "Yellow Rivers",
             "Author" : "I.P. Daily",
             "Price" : 3.99
           },
           {
-            "title" : "Full Moon",
+            "Title" : "Full Moon",
             "Author" : "Seymour Buns",
             "Price" : 6.49
           }
         ],
         "Waterstones" : [
           {
-            "title" : "Hot Dog",
+            "Title" : "Hot Dog",
             "Author" : "Frank Furter",
-            Price : 8.50 
+            "Price" : 8.50 
           }
         ]
       }
@@ -49,7 +49,7 @@ The following examples are based on this JSON data:
 
 **Get titles of all books**
 
-    =IMPORTJSONAPI("https://test.com/api", "$..title", "@")
+    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@")
  
 | Title         |
 |---------------|
@@ -57,9 +57,19 @@ The following examples are based on this JSON data:
 | Full Moon     |
 | Hot Dog       |
 
+**Get all books and authors**
+
+    =IMPORTJSONAPI("https://test.com/api", "$.stores.*[*]", "Title, Author")
+    
+| Title         | Author       |
+|---------------|--------------|
+| Yellow Rivers | I.P. Daily   |
+| Full Moon     | Seymour Buns |
+| Hot Dog       | Frank Furter |
+
 **Select all books in all stores**
 
-    =IMPORTJSONAPI("https://test.com/api", $.stores.*[*]", "^.~, title")
+    =IMPORTJSONAPI("https://test.com/api", "$.stores.*[*]", "^.~, Title")
 
 | Store Name  | Title         |
 |-------------|---------------|
