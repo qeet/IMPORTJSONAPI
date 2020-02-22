@@ -19,7 +19,7 @@ To add this custom function to your spreadsheet, follow this procedure:
 ## Usage
 
     =IMPORTJSON(URL, JSONPath Query, Columns [,Param] [,Param])
-    
+
 ### Examples
 The following examples are based on this JSON data:
 
@@ -77,7 +77,7 @@ The following examples are based on this JSON data:
 | Borders     | Full Moon     |
 | Waterstones | Hot Dog       |
 
-### Parameter Descriptions
+## Function Parameters
 | Parameter          |  Description                                                                      |
 |--------------------|-----------------------------------------------------------------------------------|
 | **URL**            | The URL endpoint of the API                                                       |
