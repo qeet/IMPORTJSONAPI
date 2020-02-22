@@ -175,11 +175,23 @@ A post request with a payload:
 
     =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", "method=post", 'payload={ "user" : "andy", pass" : "pandy" }')
 
-A request with basic authorizaton:
+A request with Basic Authorizaton:
 
     =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", 'headers={ "Authorization" : "Basic QWxhZGRpbjpPcGVuU2VzYW1l" }')
 
 ## GraphQL
 
+  To query a GraphQL API endpoint you need to set the `method`, `contentType` and `payload` parameters.
+  
+  | Parameter   | Value                             |
+  |-------------|-----------------------------------|
+  | method      | post                              |
+  | contentType | application/json                  |
+  | payload     | { 'query': 'YOUR_GRAPHQL_QUERY' } |
+  
+  **Example**
+  
      = IMPORTJSONAPI("https://api.graph.cool/simple/v1/swapi", "$..films[*]", "^^name, director", "method=post", "contentType=application/json", "payload={ 'query': '{ allPersons { name films { director } } }' }")
+
 ## Refreshing Data
+## Debugging
