@@ -111,7 +111,7 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 ### Columns
 
-The Columns paramter is a comma seperated list of path expressions. Path expressions contain one or more of the following components optionally seperated by a period '.'. 
+The Columns parameter is a comma seperated list of path expressions. Path expressions contain one or more of the following components optionally seperated by a period '.'. 
 
 | Component     |  Description                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
