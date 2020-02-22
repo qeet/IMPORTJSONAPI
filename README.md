@@ -47,9 +47,19 @@ The following examples are based on this JSON data:
       }
     }
 
+**Get titles of all books**
+
+    =IMPORTJSONAPI("https://test.com/api", "$..title", "@")
+ 
+| Title         |
+|---------------|
+| Yellow Rivers |
+| Full Moon     |
+| Hot Dog       |
+
 **Select all books in all stores**
 
-    =IMPORTJSONAPI("https://test.com/api", "$.stores.*", "~, title")
+    =IMPORTJSONAPI("https://test.com/api", $.stores.*[*]", "^.~, title")
 
 | Store Name  | Title         |
 |-------------|---------------|
