@@ -97,7 +97,7 @@ The following examples are based on this JSON data:
 | **URL**            | The URL endpoint of the API                                                       |
 | **JSONPath Query** | JSONPath query expression                                                         |
 | **Columns**        | Comma seperarted list of column path expressions                                  |
-| **Param**          | Optional list of parameters                                                       |
+| **Parameter**      | Optional list of parameters                                                       |
 
 ### URL
 The URL of the API endpoint. Any query parameters containing characters such as '&' or '=' should be urlencoded. For example:
