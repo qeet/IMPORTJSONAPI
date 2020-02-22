@@ -111,6 +111,8 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 
 ### Columns
 
+The Columns paramter is a comma seperated list of path expressions. Path expressions contain one or more of the following components optionally seperated by a period '.'. 
+
 | Component     |  Description                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
 | **keyname**   | Specifies the key to a value. Must be quoted if it contains characters other than letters, numbers or the underscore character. if the name contains a comma ',' then it must always be escaped by using %2C instead. |       
@@ -119,6 +121,24 @@ The actual JSONPath query implementation used is [JSONPath Plus](https://github.
 | **^**         | The parent of the current value.                                                  |
 | **~**         | The key name of the current value. This must always appear last in the path.      |
 | **$**         | The root of the JSON object. This must always appear first in the path.           |
+
+### Column path expression examples
+
+All example are based on the following JSON Object:
+
+```json
+{
+  "book" : {
+    "title": "It",
+    "author": "S. King",
+    "orders" : [28, 72]
+  }
+}
+```
+
+| JsonPath | Value                                                      | Columns       | Result     |
+|----------|------------------------------------------------------------|---------------|------------|
+| $.book   | { "title": "It", "author": "S. King","orders" : [28, 72] } | title, author | It, S.King |
 
 ### Params
 
