@@ -23,29 +23,30 @@ To add this custom function to your spreadsheet, follow this procedure:
 ### Examples
 The following examples are based on this JSON data:
 
-    {
-      "stores" : {
-        "Borders" : [
-          {
-            "Title" : "Yellow Rivers",
-            "Author" : "I.P. Daily",
-            "Price" : 3.99
-          },
-          {
-            "Title" : "Full Moon",
-            "Author" : "Seymour Buns",
-            "Price" : 6.49
-          }
-        ],
-        "Waterstones" : [
-          {
-            "Title" : "Hot Dog",
-            "Author" : "Frank Furter",
-            "Price" : 8.50 
-          }
-        ]
+```json
+{
+  "stores" : {
+    "Borders" : [
+      {
+        "Title" : "Yellow Rivers",
+        "Author" : "I.P. Daily",
+        "Price" : 3.99
+      },
+      {
+        "Title" : "Full Moon",
+        "Author" : "Seymour Buns",
+        "Price" : 6.49
       }
-    }
+    ],
+    "Waterstones" : [
+      {
+        "Title" : "Hot Dog",
+        "Author" : "Frank Furter",
+        "Price" : 8.50 
+      }
+    ]
+  }
+}
 
 **Get titles of all books**
 
