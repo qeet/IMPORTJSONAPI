@@ -7,7 +7,7 @@
   ------------------------------------------------------------------------------------------------------------------------------------
   
   Changelog:
-  
+  1.0.1  Fix returning empty results (2 March 2020)
   1.0.0  Initial release (23 February 2020)
  *====================================================================================================================================*/
 
@@ -76,6 +76,11 @@ function do_import_(url, query, cols, params) {
     }
     table_data.push(row_data)
   })
+  
+  if (table_data.length == 0) {
+    table_data = null;
+  }
+  
   return table_data;
 }
 
