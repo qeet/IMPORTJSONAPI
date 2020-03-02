@@ -3,6 +3,7 @@
 Provides a custom function to selectively extract data from a JSON or GraphQL API in a tabular format suitable for import into a Google Sheets spreadsheet.
 
 ## Changelog
+- v1.0.1 - Fix returning empty results (2 March 2020)
 - v1.0.0 - Initial release (23 February 2020)
 
 ## Installation
