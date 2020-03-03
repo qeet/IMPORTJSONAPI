@@ -1,12 +1,13 @@
 /*====================================================================================================================================*
   IMPORTJSONAPI 
   ====================================================================================================================================
-  Version:      1.0.1
+  Version:      1.0.2
   Project Page: https://github.com/qeet/IMPORTJSONAPI
   License:      The MIT License (MIT)
   ------------------------------------------------------------------------------------------------------------------------------------
   
   Changelog:
+  1.0.2  Return null instead of empty string for blank columns (3 March 2020)
   1.0.1  Fix returning empty results (2 March 2020)
   1.0.0  Initial release (23 February 2020)
  *====================================================================================================================================*/
@@ -94,9 +95,9 @@ function do_fetch_(url, params) {
 
 function gs_literal_(data) {
   if (data === undefined) {
-    data = ""
+    data = null
   } else if (data === null) {
-    data = ""
+    data = null
   } else if (Array.isArray(data)) {
     var s = ""
     for (var i=0; i<data.length; i++) {
