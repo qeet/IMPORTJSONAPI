@@ -105,6 +105,8 @@ function run_tests() {
   tests2();
   tests3();
   tests4();
+  tests5();
+  tests6();
 }
 
 function tests1() {
@@ -169,7 +171,7 @@ function tests2() {
   check(compare_tables(expected, actual));
   
   var expected = IMPORTJSONAPI(data1, "$.store.book[2]", "price, ^.^.~, ^.^.bicycle.color, unprop.more")
-  var actual =  [ [ 8.99, 'store', 'red', '' ] ]
+  var actual =  [ [ 8.99, 'store', 'red', null ] ]
   check(compare_tables(expected, actual));
 }
 
@@ -219,6 +221,23 @@ function tests5() {
   check(compare_tables(expected, actual));
 }
 
+function tests6() {
+  var expected = IMPORTJSONAPI([], "$", "amount")
+  var actual = [ [ null ] ]
+  check(compare_tables(expected, actual));
+  
+  var expected = IMPORTJSONAPI({}, "$.nothing", "amount")
+  check(!(expected === null))
+  
+  var expected = IMPORTJSONAPI(['a', null, 'b'], "$", "@")
+  var actual = [ ["a,null,b"] ]
+  check(compare_tables(expected, actual));
+  
+  var expected = IMPORTJSONAPI([], "$", "@")
+  var actual = [[""]]
+  check(compare_tables(expected, actual));
+}
+
 function test_a() {
   var data = IMPORTJSONAPI(data1, "city, isNBAFranchise")
   
@@ -240,3 +259,9 @@ function test_d() {
   var data = IMPORTJSONAPI("http://countries.trevorblades.com/", "$.data.countries[*]", "name, languages[0].native", "method=post", "contentType=application/json", "payload={ 'query' : '{ countries { emoji name languages { name native } } }' }")
   Logger.log(data)
 }
+
+function test_e() {
+  var data = IMPORTJSONAPI("http://aviation-edge.com/v2/public/timetable?key=33e556-819cf8&iataCode=den&type=departure", "$..codeshared", "airline.name")
+  Logger.log(data)
+}
+
