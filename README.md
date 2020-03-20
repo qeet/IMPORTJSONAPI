@@ -175,11 +175,11 @@ A basic post request with no payload:
     
 A post request with a payload:
 
-    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", "method=post", 'payload={ "user" : "andy", pass" : "pandy" }')
+    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", "method=post", "payload={ 'user' : 'andy', 'pass' : 'pandy' }")
 
 A request with Basic Authorizaton:
 
-    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", 'headers={ "Authorization" : "Basic QWxhZGRpbjpPcGVuU2VzYW1l" }')
+    =IMPORTJSONAPI("https://test.com/api", "$..Title", "@", "headers={ 'Authorization' : 'Basic QWxhZGRpbjpPcGVuU2VzYW1l' }")
 
 ## GraphQL
 
