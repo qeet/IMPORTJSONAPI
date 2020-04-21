@@ -158,7 +158,7 @@ After the three mandatory function arguments you can specify a variable number o
 
     "parametername = value"
 
-If the value contains a equals '=' character then it needs to be replaced with '%3D'. The value does not need to be quoted even if it is a string.
+If the value contains a equals '=' character then it needs to be replaced with '%3D'. If the value for a JSON parameter (headers or payload) contains a double quote then it needs to be replaced with '\%22'. The value does not need to be quoted even if it is a string.
 
 | Parameter name | Type   | Description                                                                            |
 |----------------|--------|----------------------------------------------------------------------------------------|
