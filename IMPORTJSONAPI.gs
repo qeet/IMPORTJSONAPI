@@ -1,12 +1,13 @@
 /*====================================================================================================================================*
   IMPORTJSONAPI 
   ====================================================================================================================================
-  Version:      1.0.2
+  Version:      1.0.3
   Project Page: https://github.com/qeet/IMPORTJSONAPI
   License:      The MIT License (MIT)
   ------------------------------------------------------------------------------------------------------------------------------------
   
   Changelog:
+  1.0.3  Added support for converting values to numbers (23 November 2020) 
   1.0.2  Return null instead of empty string for blank columns (3 March 2020)
   1.0.1  Fix returning empty results (2 March 2020)
   1.0.0  Initial release (23 February 2020)
@@ -63,17 +64,20 @@ function do_import_(url, query, cols, params) {
   var json = url
   if (typeof url === "string") json = do_fetch_(url, params) 
 
-  cols_code = []
+  var cols_code = []
+  var cols_conv = []
   for (var i=0; i<cols.length; i++) {
-    cols_code.push(compile_path_(cols[i]))
+    var c = cols[i].split(">")
+    cols_conv.push(c.length > 1 ? c[1] : "")
+    cols_code.push(compile_path_(c[0]))
   }
-  table_data = []
+  var table_data = []
   JSONPath.JSONPath(query, json, function(val, _, details) {
     row_data = []
     for (var i = 0; i < cols_code.length; i++) {
       var path = JSONPath.JSONPath.toPathArray(details.path).slice()
       var data = exec_(cols_code[i], val, path, json)
-      row_data.push(gs_literal_(data))
+      row_data.push(convert_data_(cols_conv[i], gs_literal_(data)))
     }
     table_data.push(row_data)
   })
@@ -94,9 +98,7 @@ function do_fetch_(url, params) {
 }
 
 function gs_literal_(data) {
-  if (data === undefined) {
-    data = null
-  } else if (data === null) {
+  if (data === undefined || data === null) {
     data = null
   } else if (Array.isArray(data)) {
     var s = ""
@@ -117,6 +119,15 @@ function gs_literal_(data) {
     data = object_str_(data)
   }
   return data
+}
+
+function convert_data_(type, value) {
+  type = type.trim()
+  if (type === "n") {
+    return parseFloat(value)
+  } else {
+    return value
+  }
 }
 
 function object_str_(obj) {
