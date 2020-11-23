@@ -3,6 +3,7 @@
 Provides a custom function to selectively extract data from a JSON or GraphQL API in a tabular format suitable for import into a Google Sheets spreadsheet.
 
 ## Changelog
+- v1.0.3 - Added support for converting values to numbers (23 November 2020) 
 - v1.0.2 - Return null instead of empty string for blank columns (3 March 2020)
 - v1.0.1 - Fix returning empty results (2 March 2020)
 - v1.0.0 - Initial release (23 February 2020)
@@ -152,6 +153,14 @@ The `Value` column is the result of the JSONPath expression and the `Result` col
 | $.book        | { "title": "It", "author": "S. King", "orders" : [28, 72] } | ~             | "book"         | 
 | $.book.orders | [28, 72]                                                    | ^~, [0]       | "book", "28"   |
 | $.book.title  | "It"                                                        | $.book.author | "S. King"      |
+
+### Converting the column data type
+
+You can convert a column that returns a string to a numeric type by appending '>n' to the column path:
+
+    Title, Price>n
+
+If you need support for other type comversions then please create a new issue.
 
 ### Parameters
 After the three mandatory function arguments you can specify a variable number of function parameters. Each parameter is of the format:
