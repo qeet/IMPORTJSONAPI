@@ -160,7 +160,7 @@ You can convert a column that returns a string to a numeric type by appending '>
 
     Title, Price>n
 
-If you need support for other type comversions then please create a new issue.
+If you need support for other type conversions then please create a new issue.
 
 ### Parameters
 After the three mandatory function arguments you can specify a variable number of function parameters. Each parameter is of the format:
