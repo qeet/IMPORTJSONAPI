@@ -1,12 +1,13 @@
 /*====================================================================================================================================*
   IMPORTJSONAPI 
   ====================================================================================================================================
-  Version:      1.0.3
+  Version:      1.0.4
   Project Page: https://github.com/qeet/IMPORTJSONAPI
   License:      The MIT License (MIT)
   ------------------------------------------------------------------------------------------------------------------------------------
   
   Changelog:
+  1.0.4  Added support for converting values to dates (30 March 2021)
   1.0.3  Added support for converting values to numbers (23 November 2020) 
   1.0.2  Return null instead of empty string for blank columns (3 March 2020)
   1.0.1  Fix returning empty results (2 March 2020)
@@ -125,6 +126,8 @@ function convert_data_(type, value) {
   type = type.trim()
   if (type === "n") {
     return parseFloat(value)
+  } else if (type === "d") {
+    return new Date(value)
   } else {
     return value
   }
