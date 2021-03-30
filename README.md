@@ -3,6 +3,7 @@
 Provides a custom function to selectively extract data from a JSON or GraphQL API in a tabular format suitable for import into a Google Sheets spreadsheet.
 
 ## Changelog
+- v1.0.4 - Added support for converting values to dates (30 March 2021) 
 - v1.0.3 - Added support for converting values to numbers (23 November 2020) 
 - v1.0.2 - Return null instead of empty string for blank columns (3 March 2020)
 - v1.0.1 - Fix returning empty results (2 March 2020)
@@ -159,6 +160,10 @@ The `Value` column is the result of the JSONPath expression and the `Result` col
 You can convert a column that returns a string to a numeric type by appending '>n' to the column path:
 
     Title, Price>n
+    
+You can convert a column that returns a string to a date type by appending '>d' to the column path:
+
+    Title, PubDate>d
 
 If you need support for other type conversions then please create a new issue.
 
