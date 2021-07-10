@@ -1,12 +1,13 @@
 /*====================================================================================================================================*
   IMPORTJSONAPI 
   ====================================================================================================================================
-  Version:      1.0.4
+  Version:      1.0.5
   Project Page: https://github.com/qeet/IMPORTJSONAPI
   License:      The MIT License (MIT)
   ------------------------------------------------------------------------------------------------------------------------------------
   
   Changelog:
+  1.0.5  Added support for importing data from within a speadsheet (10 July 2021) 
   1.0.4  Added support for converting values to dates (30 March 2021)
   1.0.3  Added support for converting values to numbers (23 November 2020) 
   1.0.2  Return null instead of empty string for blank columns (3 March 2020)
@@ -63,8 +64,14 @@ function IMPORTJSONAPI(url, query, cols) {
 
 function do_import_(url, query, cols, params) {
   var json = url
-  if (typeof url === "string") json = do_fetch_(url, params) 
-
+  if (typeof url === "string") {
+    url = url.trim()
+    if (url.startsWith("{") || url.startsWith("[")) {
+      json = JSON.parse(url) 
+    } else {
+      json = do_fetch_(url, params)
+    } 
+  }
   var cols_code = []
   var cols_conv = []
   for (var i=0; i<cols.length; i++) {
