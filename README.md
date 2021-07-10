@@ -105,6 +105,10 @@ The following examples are based on this JSON data:
 The URL of the API endpoint. Any query parameters containing characters such as '&' or '=' should be urlencoded. For example:
 
     =IMPORTJSONAPI("https://api.test.com/store?api_token=ds45%3F6hjkd%3Ddjs, ...)
+    
+You can also import JSON data that is contained within a cell of your spreadsheet by replacing the URL with a reference to the cell:
+
+    =IMPORTJSONAPI(A3, ...)
 
 ### JSONPath Query
 The JSONPath expression to select the data that you wish to extract. Each JSON object matched by the expression will become a row in your spreadsheet. An introduction to JSONPath expressions can be found at <http://goessner.net/articles/JsonPath/>.
